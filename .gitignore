@@ -8,6 +8,7 @@ coverage/
 .venv/
 __pycache__/
 *.py[cod]
+.artifacts/
 
 # The user-supplied implementation brief is local reference material only.
 *実装指示書.md

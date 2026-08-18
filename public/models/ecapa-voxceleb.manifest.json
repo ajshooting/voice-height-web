@@ -1,0 +1,791 @@
+{
+  "formatVersion": 1,
+  "sourceModel": {
+    "upstream": "speechbrain/spkrec-ecapa-voxceleb",
+    "revision": "0f99f2d0ebe89ac095bcc5903c4dd8f72b367286",
+    "checkpointSha256": "0575cb64845e6b9a10db9bcb74d5ac32b326b8dc90352671d345e2ee3d0126a2",
+    "license": "Apache-2.0",
+    "file": "ecapa-embedding-fp32.onnx",
+    "bytes": 83475226,
+    "sha256": "9cfdd98f669153ea126d65562663e2e7104a1cb08828315c2d46133a30c2db6f"
+  },
+  "candidateModel": {
+    "file": "ecapa-voxceleb.onnx",
+    "bytes": 23470546,
+    "sha256": "f580b0d3017199d78365516351e86d4fdecec0736fe5d9e7128f7464f81fa2dc",
+    "license": "Apache-2.0",
+    "modified": "Converted from the pinned PyTorch checkpoint to ONNX, then stored selected Conv weights as per-output-channel symmetric INT8 with DequantizeLinear back to FLOAT."
+  },
+  "sizeReduction": {
+    "bytes": 60004680,
+    "fraction": 0.7188321957942347
+  },
+  "compression": {
+    "format": "weight-only-symmetric-int8-per-output-channel-qdq",
+    "axis": 0,
+    "excludedWeightPatterns": [
+      "embedding_model.blocks.0*",
+      "embedding_model.blocks.1.se_block*"
+    ],
+    "compressedInitializers": 35,
+    "compressedConvNodes": 35,
+    "skippedConvNodes": [
+      {
+        "node": "/embedding_model/blocks.0/conv/conv/Conv",
+        "weight": "embedding_model.blocks.0.conv.conv.weight",
+        "reason": "Excluded by --exclude-weight"
+      },
+      {
+        "node": "/embedding_model/blocks.1/se_block/conv1/conv/Conv",
+        "weight": "embedding_model.blocks.1.se_block.conv1.conv.weight",
+        "reason": "Excluded by --exclude-weight"
+      },
+      {
+        "node": "/embedding_model/blocks.1/se_block/conv2/conv/Conv",
+        "weight": "embedding_model.blocks.1.se_block.conv2.conv.weight",
+        "reason": "Excluded by --exclude-weight"
+      }
+    ],
+    "originalConvWeightBytes": 80150528,
+    "storedCompressedWeightBytes": 20125632,
+    "weights": [
+      {
+        "name": "embedding_model.asp.conv.conv.weight",
+        "shape": [
+          3072,
+          128,
+          1
+        ],
+        "elements": 393216,
+        "convConsumers": 1,
+        "originalWeightBytes": 1572864,
+        "storedWeightBytes": 408576,
+        "zeroChannels": 0,
+        "minimumScale": 1.9692151909112e-06,
+        "maximumScale": 0.019786860793828964,
+        "meanAbsoluteReconstructionError": 0.0012996937148272991,
+        "maxAbsoluteReconstructionError": 0.009820207953453064
+      },
+      {
+        "name": "embedding_model.asp.tdnn.conv.conv.weight",
+        "shape": [
+          128,
+          9216,
+          1
+        ],
+        "elements": 1179648,
+        "convConsumers": 1,
+        "originalWeightBytes": 4718592,
+        "storedWeightBytes": 1180288,
+        "zeroChannels": 0,
+        "minimumScale": 2.5816121608256105e-41,
+        "maximumScale": 0.02997937984764576,
+        "meanAbsoluteReconstructionError": 0.0017968027386814356,
+        "maxAbsoluteReconstructionError": 0.014981940388679504
+      },
+      {
+        "name": "embedding_model.blocks.1.res2net_block.blocks.0.conv.conv.weight",
+        "shape": [
+          128,
+          128,
+          3
+        ],
+        "elements": 49152,
+        "convConsumers": 1,
+        "originalWeightBytes": 196608,
+        "storedWeightBytes": 49792,
+        "zeroChannels": 0,
+        "minimumScale": 0.00286868610419333,
+        "maximumScale": 0.021127639338374138,
+        "meanAbsoluteReconstructionError": 0.0020744167268276215,
+        "maxAbsoluteReconstructionError": 0.010563656687736511
+      },
+      {
+        "name": "embedding_model.blocks.1.res2net_block.blocks.1.conv.conv.weight",
+        "shape": [
+          128,
+          128,
+          3
+        ],
+        "elements": 49152,
+        "convConsumers": 1,
+        "originalWeightBytes": 196608,
+        "storedWeightBytes": 49792,
+        "zeroChannels": 0,
+        "minimumScale": 0.003486189292743802,
+        "maximumScale": 0.014901306480169296,
+        "meanAbsoluteReconstructionError": 0.0020380874630063772,
+        "maxAbsoluteReconstructionError": 0.007419377565383911
+      },
+      {
+        "name": "embedding_model.blocks.1.res2net_block.blocks.2.conv.conv.weight",
+        "shape": [
+          128,
+          128,
+          3
+        ],
+        "elements": 49152,
+        "convConsumers": 1,
+        "originalWeightBytes": 196608,
+        "storedWeightBytes": 49792,
+        "zeroChannels": 0,
+        "minimumScale": 0.0031224912963807583,
+        "maximumScale": 0.015978796407580376,
+        "meanAbsoluteReconstructionError": 0.0018173771677538753,
+        "maxAbsoluteReconstructionError": 0.007981270551681519
+      },
+      {
+        "name": "embedding_model.blocks.1.res2net_block.blocks.3.conv.conv.weight",
+        "shape": [
+          128,
+          128,
+          3
+        ],
+        "elements": 49152,
+        "convConsumers": 1,
+        "originalWeightBytes": 196608,
+        "storedWeightBytes": 49792,
+        "zeroChannels": 0,
+        "minimumScale": 0.0008428628207184374,
+        "maximumScale": 0.01875999942421913,
+        "meanAbsoluteReconstructionError": 0.0017646508058533072,
+        "maxAbsoluteReconstructionError": 0.009371288120746613
+      },
+      {
+        "name": "embedding_model.blocks.1.res2net_block.blocks.4.conv.conv.weight",
+        "shape": [
+          128,
+          128,
+          3
+        ],
+        "elements": 49152,
+        "convConsumers": 1,
+        "originalWeightBytes": 196608,
+        "storedWeightBytes": 49792,
+        "zeroChannels": 0,
+        "minimumScale": 0.000452582782600075,
+        "maximumScale": 0.01909327693283558,
+        "meanAbsoluteReconstructionError": 0.001996939769014716,
+        "maxAbsoluteReconstructionError": 0.009519301354885101
+      },
+      {
+        "name": "embedding_model.blocks.1.res2net_block.blocks.5.conv.conv.weight",
+        "shape": [
+          128,
+          128,
+          3
+        ],
+        "elements": 49152,
+        "convConsumers": 1,
+        "originalWeightBytes": 196608,
+        "storedWeightBytes": 49792,
+        "zeroChannels": 0,
+        "minimumScale": 0.000582569045946002,
+        "maximumScale": 0.018988901749253273,
+        "meanAbsoluteReconstructionError": 0.0018325838027521968,
+        "maxAbsoluteReconstructionError": 0.009486153721809387
+      },
+      {
+        "name": "embedding_model.blocks.1.res2net_block.blocks.6.conv.conv.weight",
+        "shape": [
+          128,
+          128,
+          3
+        ],
+        "elements": 49152,
+        "convConsumers": 1,
+        "originalWeightBytes": 196608,
+        "storedWeightBytes": 49792,
+        "zeroChannels": 0,
+        "minimumScale": 0.004257168620824814,
+        "maximumScale": 0.024932729080319405,
+        "meanAbsoluteReconstructionError": 0.002243645256385207,
+        "maxAbsoluteReconstructionError": 0.012453893199563026
+      },
+      {
+        "name": "embedding_model.blocks.1.tdnn1.conv.conv.weight",
+        "shape": [
+          1024,
+          1024,
+          1
+        ],
+        "elements": 1048576,
+        "convConsumers": 1,
+        "originalWeightBytes": 4194304,
+        "storedWeightBytes": 1053696,
+        "zeroChannels": 0,
+        "minimumScale": 1.802756461369234e-40,
+        "maximumScale": 0.04595661908388138,
+        "meanAbsoluteReconstructionError": 0.002186337485909462,
+        "maxAbsoluteReconstructionError": 0.02294030785560608
+      },
+      {
+        "name": "embedding_model.blocks.1.tdnn2.conv.conv.weight",
+        "shape": [
+          1024,
+          1024,
+          1
+        ],
+        "elements": 1048576,
+        "convConsumers": 1,
+        "originalWeightBytes": 4194304,
+        "storedWeightBytes": 1053696,
+        "zeroChannels": 0,
+        "minimumScale": 0.00021542453032452613,
+        "maximumScale": 0.03380627930164337,
+        "meanAbsoluteReconstructionError": 0.002203696873039007,
+        "maxAbsoluteReconstructionError": 0.01686769165098667
+      },
+      {
+        "name": "embedding_model.blocks.2.res2net_block.blocks.0.conv.conv.weight",
+        "shape": [
+          128,
+          128,
+          3
+        ],
+        "elements": 49152,
+        "convConsumers": 1,
+        "originalWeightBytes": 196608,
+        "storedWeightBytes": 49792,
+        "zeroChannels": 0,
+        "minimumScale": 0.0046486444771289825,
+        "maximumScale": 0.01527904998511076,
+        "meanAbsoluteReconstructionError": 0.0019241133704781532,
+        "maxAbsoluteReconstructionError": 0.007631510496139526
+      },
+      {
+        "name": "embedding_model.blocks.2.res2net_block.blocks.1.conv.conv.weight",
+        "shape": [
+          128,
+          128,
+          3
+        ],
+        "elements": 49152,
+        "convConsumers": 1,
+        "originalWeightBytes": 196608,
+        "storedWeightBytes": 49792,
+        "zeroChannels": 0,
+        "minimumScale": 0.005024012178182602,
+        "maximumScale": 0.012662424705922604,
+        "meanAbsoluteReconstructionError": 0.0018196665914729238,
+        "maxAbsoluteReconstructionError": 0.0063166022300720215
+      },
+      {
+        "name": "embedding_model.blocks.2.res2net_block.blocks.2.conv.conv.weight",
+        "shape": [
+          128,
+          128,
+          3
+        ],
+        "elements": 49152,
+        "convConsumers": 1,
+        "originalWeightBytes": 196608,
+        "storedWeightBytes": 49792,
+        "zeroChannels": 0,
+        "minimumScale": 0.0042018042877316475,
+        "maximumScale": 0.01757352240383625,
+        "meanAbsoluteReconstructionError": 0.0017507969168946147,
+        "maxAbsoluteReconstructionError": 0.0087660551071167
+      },
+      {
+        "name": "embedding_model.blocks.2.res2net_block.blocks.3.conv.conv.weight",
+        "shape": [
+          128,
+          128,
+          3
+        ],
+        "elements": 49152,
+        "convConsumers": 1,
+        "originalWeightBytes": 196608,
+        "storedWeightBytes": 49792,
+        "zeroChannels": 0,
+        "minimumScale": 0.004231482278555632,
+        "maximumScale": 0.02308906987309456,
+        "meanAbsoluteReconstructionError": 0.0017413281602784991,
+        "maxAbsoluteReconstructionError": 0.011504590511322021
+      },
+      {
+        "name": "embedding_model.blocks.2.res2net_block.blocks.4.conv.conv.weight",
+        "shape": [
+          128,
+          128,
+          3
+        ],
+        "elements": 49152,
+        "convConsumers": 1,
+        "originalWeightBytes": 196608,
+        "storedWeightBytes": 49792,
+        "zeroChannels": 0,
+        "minimumScale": 0.0008497711969539523,
+        "maximumScale": 0.01613582670688629,
+        "meanAbsoluteReconstructionError": 0.0016647818265482783,
+        "maxAbsoluteReconstructionError": 0.008052900433540344
+      },
+      {
+        "name": "embedding_model.blocks.2.res2net_block.blocks.5.conv.conv.weight",
+        "shape": [
+          128,
+          128,
+          3
+        ],
+        "elements": 49152,
+        "convConsumers": 1,
+        "originalWeightBytes": 196608,
+        "storedWeightBytes": 49792,
+        "zeroChannels": 0,
+        "minimumScale": 0.0037722692359238863,
+        "maximumScale": 0.021496789529919624,
+        "meanAbsoluteReconstructionError": 0.0018071631202474236,
+        "maxAbsoluteReconstructionError": 0.010691940784454346
+      },
+      {
+        "name": "embedding_model.blocks.2.res2net_block.blocks.6.conv.conv.weight",
+        "shape": [
+          128,
+          128,
+          3
+        ],
+        "elements": 49152,
+        "convConsumers": 1,
+        "originalWeightBytes": 196608,
+        "storedWeightBytes": 49792,
+        "zeroChannels": 0,
+        "minimumScale": 0.004363452550023794,
+        "maximumScale": 0.01810513809323311,
+        "meanAbsoluteReconstructionError": 0.0019461329793557525,
+        "maxAbsoluteReconstructionError": 0.00905029010027647
+      },
+      {
+        "name": "embedding_model.blocks.2.se_block.conv1.conv.weight",
+        "shape": [
+          128,
+          1024,
+          1
+        ],
+        "elements": 131072,
+        "convConsumers": 1,
+        "originalWeightBytes": 524288,
+        "storedWeightBytes": 131712,
+        "zeroChannels": 0,
+        "minimumScale": 2.5845548876006926e-41,
+        "maximumScale": 0.03708471357822418,
+        "meanAbsoluteReconstructionError": 0.00255232909694314,
+        "maxAbsoluteReconstructionError": 0.018526002764701843
+      },
+      {
+        "name": "embedding_model.blocks.2.se_block.conv2.conv.weight",
+        "shape": [
+          1024,
+          128,
+          1
+        ],
+        "elements": 131072,
+        "convConsumers": 1,
+        "originalWeightBytes": 524288,
+        "storedWeightBytes": 136192,
+        "zeroChannels": 0,
+        "minimumScale": 0.0016137879574671388,
+        "maximumScale": 0.014598715119063854,
+        "meanAbsoluteReconstructionError": 0.0014312610728666186,
+        "maxAbsoluteReconstructionError": 0.007268965244293213
+      },
+      {
+        "name": "embedding_model.blocks.2.tdnn1.conv.conv.weight",
+        "shape": [
+          1024,
+          1024,
+          1
+        ],
+        "elements": 1048576,
+        "convConsumers": 1,
+        "originalWeightBytes": 4194304,
+        "storedWeightBytes": 1053696,
+        "zeroChannels": 0,
+        "minimumScale": 1.553015787888647e-38,
+        "maximumScale": 0.03489472717046738,
+        "meanAbsoluteReconstructionError": 0.001821352867409587,
+        "maxAbsoluteReconstructionError": 0.017406538128852844
+      },
+      {
+        "name": "embedding_model.blocks.2.tdnn2.conv.conv.weight",
+        "shape": [
+          1024,
+          1024,
+          1
+        ],
+        "elements": 1048576,
+        "convConsumers": 1,
+        "originalWeightBytes": 4194304,
+        "storedWeightBytes": 1053696,
+        "zeroChannels": 0,
+        "minimumScale": 0.002429477171972394,
+        "maximumScale": 0.022751377895474434,
+        "meanAbsoluteReconstructionError": 0.0019436588045209646,
+        "maxAbsoluteReconstructionError": 0.011375593952834606
+      },
+      {
+        "name": "embedding_model.blocks.3.res2net_block.blocks.0.conv.conv.weight",
+        "shape": [
+          128,
+          128,
+          3
+        ],
+        "elements": 49152,
+        "convConsumers": 1,
+        "originalWeightBytes": 196608,
+        "storedWeightBytes": 49792,
+        "zeroChannels": 0,
+        "minimumScale": 0.004582597408443689,
+        "maximumScale": 0.011508304625749588,
+        "meanAbsoluteReconstructionError": 0.0017440890660509467,
+        "maxAbsoluteReconstructionError": 0.005753142759203911
+      },
+      {
+        "name": "embedding_model.blocks.3.res2net_block.blocks.1.conv.conv.weight",
+        "shape": [
+          128,
+          128,
+          3
+        ],
+        "elements": 49152,
+        "convConsumers": 1,
+        "originalWeightBytes": 196608,
+        "storedWeightBytes": 49792,
+        "zeroChannels": 0,
+        "minimumScale": 0.005178885534405708,
+        "maximumScale": 0.013194381259381771,
+        "meanAbsoluteReconstructionError": 0.0017424136167392135,
+        "maxAbsoluteReconstructionError": 0.006585925817489624
+      },
+      {
+        "name": "embedding_model.blocks.3.res2net_block.blocks.2.conv.conv.weight",
+        "shape": [
+          128,
+          128,
+          3
+        ],
+        "elements": 49152,
+        "convConsumers": 1,
+        "originalWeightBytes": 196608,
+        "storedWeightBytes": 49792,
+        "zeroChannels": 0,
+        "minimumScale": 0.005088524427264929,
+        "maximumScale": 0.016871701925992966,
+        "meanAbsoluteReconstructionError": 0.0018003174336627126,
+        "maxAbsoluteReconstructionError": 0.008430466055870056
+      },
+      {
+        "name": "embedding_model.blocks.3.res2net_block.blocks.3.conv.conv.weight",
+        "shape": [
+          128,
+          128,
+          3
+        ],
+        "elements": 49152,
+        "convConsumers": 1,
+        "originalWeightBytes": 196608,
+        "storedWeightBytes": 49792,
+        "zeroChannels": 0,
+        "minimumScale": 0.00522650545462966,
+        "maximumScale": 0.012718814425170422,
+        "meanAbsoluteReconstructionError": 0.001834964961744845,
+        "maxAbsoluteReconstructionError": 0.0063370466232299805
+      },
+      {
+        "name": "embedding_model.blocks.3.res2net_block.blocks.4.conv.conv.weight",
+        "shape": [
+          128,
+          128,
+          3
+        ],
+        "elements": 49152,
+        "convConsumers": 1,
+        "originalWeightBytes": 196608,
+        "storedWeightBytes": 49792,
+        "zeroChannels": 0,
+        "minimumScale": 0.00513170100748539,
+        "maximumScale": 0.014477066695690155,
+        "meanAbsoluteReconstructionError": 0.001894332584924996,
+        "maxAbsoluteReconstructionError": 0.007225468754768372
+      },
+      {
+        "name": "embedding_model.blocks.3.res2net_block.blocks.5.conv.conv.weight",
+        "shape": [
+          128,
+          128,
+          3
+        ],
+        "elements": 49152,
+        "convConsumers": 1,
+        "originalWeightBytes": 196608,
+        "storedWeightBytes": 49792,
+        "zeroChannels": 0,
+        "minimumScale": 0.0053182183764874935,
+        "maximumScale": 0.015347803942859173,
+        "meanAbsoluteReconstructionError": 0.0018542284378781915,
+        "maxAbsoluteReconstructionError": 0.007649123668670654
+      },
+      {
+        "name": "embedding_model.blocks.3.res2net_block.blocks.6.conv.conv.weight",
+        "shape": [
+          128,
+          128,
+          3
+        ],
+        "elements": 49152,
+        "convConsumers": 1,
+        "originalWeightBytes": 196608,
+        "storedWeightBytes": 49792,
+        "zeroChannels": 0,
+        "minimumScale": 0.004573456011712551,
+        "maximumScale": 0.01140566635876894,
+        "meanAbsoluteReconstructionError": 0.001771597540937364,
+        "maxAbsoluteReconstructionError": 0.005695626139640808
+      },
+      {
+        "name": "embedding_model.blocks.3.se_block.conv1.conv.weight",
+        "shape": [
+          128,
+          1024,
+          1
+        ],
+        "elements": 131072,
+        "convConsumers": 1,
+        "originalWeightBytes": 524288,
+        "storedWeightBytes": 131712,
+        "zeroChannels": 0,
+        "minimumScale": 2.580350992207718e-41,
+        "maximumScale": 0.02440517768263817,
+        "meanAbsoluteReconstructionError": 0.0026303427293896675,
+        "maxAbsoluteReconstructionError": 0.012197893112897873
+      },
+      {
+        "name": "embedding_model.blocks.3.se_block.conv2.conv.weight",
+        "shape": [
+          1024,
+          128,
+          1
+        ],
+        "elements": 131072,
+        "convConsumers": 1,
+        "originalWeightBytes": 524288,
+        "storedWeightBytes": 136192,
+        "zeroChannels": 0,
+        "minimumScale": 0.00248488481156528,
+        "maximumScale": 0.019544580951333046,
+        "meanAbsoluteReconstructionError": 0.0013304599560797215,
+        "maxAbsoluteReconstructionError": 0.009732842445373535
+      },
+      {
+        "name": "embedding_model.blocks.3.tdnn1.conv.conv.weight",
+        "shape": [
+          1024,
+          1024,
+          1
+        ],
+        "elements": 1048576,
+        "convConsumers": 1,
+        "originalWeightBytes": 4194304,
+        "storedWeightBytes": 1053696,
+        "zeroChannels": 0,
+        "minimumScale": 0.00029754164279438555,
+        "maximumScale": 0.025322899222373962,
+        "meanAbsoluteReconstructionError": 0.0017179334536194801,
+        "maxAbsoluteReconstructionError": 0.01265077292919159
+      },
+      {
+        "name": "embedding_model.blocks.3.tdnn2.conv.conv.weight",
+        "shape": [
+          1024,
+          1024,
+          1
+        ],
+        "elements": 1048576,
+        "convConsumers": 1,
+        "originalWeightBytes": 4194304,
+        "storedWeightBytes": 1053696,
+        "zeroChannels": 0,
+        "minimumScale": 0.004034172277897596,
+        "maximumScale": 0.019845804199576378,
+        "meanAbsoluteReconstructionError": 0.0018476612167432904,
+        "maxAbsoluteReconstructionError": 0.009920135140419006
+      },
+      {
+        "name": "embedding_model.fc.conv.weight",
+        "shape": [
+          192,
+          6144,
+          1
+        ],
+        "elements": 1179648,
+        "convConsumers": 1,
+        "originalWeightBytes": 4718592,
+        "storedWeightBytes": 1180608,
+        "zeroChannels": 0,
+        "minimumScale": 0.006369184702634811,
+        "maximumScale": 0.010409479960799217,
+        "meanAbsoluteReconstructionError": 0.001884364988654852,
+        "maxAbsoluteReconstructionError": 0.0052041709423065186
+      },
+      {
+        "name": "embedding_model.mfa.conv.conv.weight",
+        "shape": [
+          3072,
+          3072,
+          1
+        ],
+        "elements": 9437184,
+        "convConsumers": 1,
+        "originalWeightBytes": 37748736,
+        "storedWeightBytes": 9452544,
+        "zeroChannels": 0,
+        "minimumScale": 0.002980401273816824,
+        "maximumScale": 0.01758446730673313,
+        "meanAbsoluteReconstructionError": 0.0015567080117762089,
+        "maxAbsoluteReconstructionError": 0.008787676692008972
+      }
+    ]
+  },
+  "validation": {
+    "provider": "CPUExecutionProvider",
+    "fixtureConstruction": "Use the hash-verified 327-frame SpeechBrain fixture unchanged for the official example; truncate or repeat it for the other cases.",
+    "thresholds": {
+      "minimumCosineSimilarity": 0.999,
+      "maximumAutomaticHeightDifferenceCm": 0.1,
+      "heightGateCases": "all"
+    },
+    "cases": [
+      {
+        "case": "1-second",
+        "frames": 101,
+        "cosineSimilarity": 0.9996924173842353,
+        "maxAbsoluteDifference": 1.9484138488769531,
+        "passed": true,
+        "downstream": {
+          "source": {
+            "routingScore": -12.981697192844726,
+            "route": "female-model",
+            "femaleHeightCm": 171.56417970987303,
+            "maleHeightCm": 183.52552971369022,
+            "automaticHeightCm": 171.56417970987303
+          },
+          "candidate": {
+            "routingScore": -13.19355780218373,
+            "route": "female-model",
+            "femaleHeightCm": 171.66154393087436,
+            "maleHeightCm": 183.51473943222,
+            "automaticHeightCm": 171.66154393087436
+          },
+          "routeMatch": true,
+          "automaticHeightAbsoluteDifferenceCm": 0.09736422100132813,
+          "requiredForPass": true,
+          "passed": true
+        }
+      },
+      {
+        "case": "official-example",
+        "frames": 327,
+        "cosineSimilarity": 0.9997765374510302,
+        "maxAbsoluteDifference": 1.2136735916137695,
+        "passed": true,
+        "downstream": {
+          "source": {
+            "routingScore": -26.730626888904183,
+            "route": "female-model",
+            "femaleHeightCm": 167.1526569613609,
+            "maleHeightCm": 185.39999039395437,
+            "automaticHeightCm": 167.1526569613609
+          },
+          "candidate": {
+            "routingScore": -26.720176326178837,
+            "route": "female-model",
+            "femaleHeightCm": 167.20190628979978,
+            "maleHeightCm": 185.368230112254,
+            "automaticHeightCm": 167.20190628979978
+          },
+          "routeMatch": true,
+          "automaticHeightAbsoluteDifferenceCm": 0.04924932843888996,
+          "requiredForPass": true,
+          "passed": true
+        }
+      },
+      {
+        "case": "5-seconds",
+        "frames": 501,
+        "cosineSimilarity": 0.9997659110566992,
+        "maxAbsoluteDifference": 1.3600807189941406,
+        "passed": true,
+        "downstream": {
+          "source": {
+            "routingScore": -29.99999546836758,
+            "route": "female-model",
+            "femaleHeightCm": 169.2671406314484,
+            "maleHeightCm": 185.09599608687762,
+            "automaticHeightCm": 169.2671406314484
+          },
+          "candidate": {
+            "routingScore": -30.03037505644818,
+            "route": "female-model",
+            "femaleHeightCm": 169.34345996943824,
+            "maleHeightCm": 185.0504469575786,
+            "automaticHeightCm": 169.34345996943824
+          },
+          "routeMatch": true,
+          "automaticHeightAbsoluteDifferenceCm": 0.07631933798984392,
+          "requiredForPass": true,
+          "passed": true
+        }
+      },
+      {
+        "case": "10-seconds",
+        "frames": 1001,
+        "cosineSimilarity": 0.9997763765965795,
+        "maxAbsoluteDifference": 1.2624969482421875,
+        "passed": true,
+        "downstream": {
+          "source": {
+            "routingScore": -26.915135976809914,
+            "route": "female-model",
+            "femaleHeightCm": 167.20555190520733,
+            "maleHeightCm": 185.500996988993,
+            "automaticHeightCm": 167.20555190520733
+          },
+          "candidate": {
+            "routingScore": -26.8960784927634,
+            "route": "female-model",
+            "femaleHeightCm": 167.2524737246192,
+            "maleHeightCm": 185.46711061298276,
+            "automaticHeightCm": 167.2524737246192
+          },
+          "routeMatch": true,
+          "automaticHeightAbsoluteDifferenceCm": 0.04692181941186391,
+          "requiredForPass": true,
+          "passed": true
+        }
+      }
+    ],
+    "passed": true
+  },
+  "fixtures": {
+    "features": {
+      "file": "speechbrain-example1.features.f32",
+      "bytes": 104640,
+      "sha256": "6c9f741f8dbbe4617d8c3f301437bc4dd9550a6f3281dc9187f2dc72f6fc217f"
+    },
+    "reference": {
+      "file": "speechbrain-example1.reference.json",
+      "bytes": 6092,
+      "sha256": "60fde658c6b1d88a2e6d4de3c83eff4f70d68df6f4161243a357b65b2f071ab4"
+    }
+  },
+  "regressors": {
+    "file": "height-regressors.json",
+    "bytes": 18327,
+    "sha256": "53b8e6bd7cadf296036365297811058b96ef3567288442a2e3d0188c6f776045"
+  },
+  "toolchain": {
+    "numpy": "1.26.4",
+    "onnx": "1.17.0",
+    "onnxruntime": "1.20.1"
+  }
+}
