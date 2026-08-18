@@ -1,0 +1,14 @@
+.DS_Store
+node_modules/
+dist/
+coverage/
+.env
+.env.*
+!.env.example
+.venv/
+__pycache__/
+*.py[cod]
+
+# The user-supplied implementation brief is local reference material only.
+*実装指示書.md
+RESEARCH.md
