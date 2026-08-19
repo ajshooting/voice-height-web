@@ -57,7 +57,9 @@ pnpm check
 pnpm build
 ```
 
-`vite.config.ts` の `base: "./"` により、生成した `dist/` はサブパスを含む静的ホスティングで利用できます。このリポジトリからデプロイやホスティングを行う処理はまだ用意していません。
+`vite.config.ts` の `base: "./"` により、生成した `dist/` はサブパスを含む静的ホスティングで利用できます。
+
+`.github/workflows/deploy-pages.yml` は、`main`へのpushまたは手動実行時に、固定lockfileで依存を導入し、テストとproduction buildを通した`dist/`だけをGitHub Pagesへ送ります。GitHub側では、リポジトリのSettings → Pages → Build and deployment → Sourceを「GitHub Actions」に設定してください。
 
 ### 固定WAVのブラウザ検証
 
