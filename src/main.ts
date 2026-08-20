@@ -41,21 +41,11 @@ const appMarkup = `
   <a class="skip-link" href="#main-content">本文へ移動</a>
   <main class="app-shell" id="main-content">
     <header class="intro">
-      <p class="eyebrow">端末内で完結</p>
-      <h1>声から、身長を推定。</h1>
-      <p class="intro__lead">
-        普段の声を5秒ほど録音すると、声の特徴から身長の目安を表示します。
-      </p>
+      <h1>声から身長を推定</h1>
+      <p class="intro__lead">普段の声を5秒ほど録音すると、身長の目安を表示します。</p>
     </header>
 
     <section class="estimator" aria-labelledby="estimator-title">
-      <div class="microphone" aria-hidden="true">
-        <svg viewBox="0 0 48 48" focusable="false">
-          <rect x="17" y="7" width="14" height="23" rx="7"></rect>
-          <path d="M11.5 23.5a12.5 12.5 0 0 0 25 0M24 36v6M17.5 42h13"></path>
-        </svg>
-      </div>
-
       <div class="status-copy" role="status" aria-live="polite" aria-atomic="true">
         <h2 id="estimator-title" data-ui="status">モデルを準備してください</h2>
         <p data-ui="detail">初回のみ、モデルと推論ランタイムを合計約48 MB取得します。</p>
@@ -114,24 +104,19 @@ const appMarkup = `
     </section>
 
     <section class="facts" aria-label="この推定について">
-      <article class="fact fact--privacy">
-        <h2>音声は端末の外へ出ません</h2>
+      <article class="fact">
+        <h2>プライバシー</h2>
         <p>録音から推定までブラウザ内で処理し、音声をサーバーへ送信・保存しません。</p>
       </article>
       <article class="fact">
-        <h2>論文上の誤差の目安：約5 cm</h2>
-        <p>同方式をTIMITで評価したMAEです。ブラウザ版の実音声での再評価値ではなく、個々の結果を保証しません。</p>
+        <h2>精度</h2>
+        <p>同方式をTIMITで評価した論文上のMAEは約5 cmです。ブラウザ版の実音声での再評価値ではなく、日本語音声での精度も未検証です。</p>
       </article>
       <article class="fact">
-        <h2>精度には限界があります</h2>
-        <p>日本語音声での精度は未検証です。録音環境や話し方によって結果は変わります。</p>
+        <h2>用途</h2>
+        <p>娯楽目的の推定です。健康・本人確認・採用など、重要な判断には使用しないでください。</p>
       </article>
     </section>
-
-    <aside class="notice" aria-label="利用上の注意">
-      <strong>この推定は娯楽目的です。</strong>
-      <span>健康・本人確認・採用など、重要な判断には使用しないでください。</span>
-    </aside>
 
     <footer class="legal">
       <a href="./THIRD_PARTY_NOTICES.md">第三者ライセンス・モデル帰属</a>
